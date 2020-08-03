@@ -5,6 +5,7 @@ import '../styles/global.css';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../apollo/client';
 import Layouts from 'components/Layouts';
+
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   return (

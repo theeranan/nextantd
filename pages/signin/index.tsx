@@ -24,8 +24,7 @@ const tailLayout = {
 const signin = () => {
   const client = useApolloClient();
   const [signIn] = useMutation(SignInMutation);
-  const router = useRouter();
-  const onFinish = async (values) => {
+  const onFinish = async (values: any) => {
     console.log('Success:', values);
     try {
       await client.resetStore();
@@ -36,10 +35,11 @@ const signin = () => {
         },
       });
       if (data.signIn.user) {
-        await router.push('/');
+        // await router.push('/');
+        window.location.href = '/';
       }
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 
